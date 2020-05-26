@@ -36,7 +36,6 @@ const Card = ({
           <p>{children}</p>
         </div>
         {/* Logo */}
-        <div className="cc_logo-placeholder" />
         <LogoPlaceholder />
       </div>
     </div>
@@ -68,13 +67,58 @@ const defaultCardState = {
 
 function App() {
   const [cardState, setCardState] = useState(defaultCardState);
+  const [useSecondary, setSecondary] = useState(defaultCardState.secondary);
+  const [useTitle, setTitle] = useState(defaultCardState.secondary);
+  const [useDescription, setDescription] = useState(
+    defaultCardState.description
+  );
   console.log("cardSTate", cardState);
   return (
     <div className="App">
       <header className="App-header">
         <h1>State: hi</h1>
+
         <Card />
         {/* <CardForm /> */}
+        <h3>Secondary: {useSecondary}</h3>
+        <h3>Title: {useTitle}</h3>
+        <h3>Description: {useDescription}</h3>
+        <div>
+          <label for="secondary">Secondary</label>
+          <input
+            type="text"
+            id="secondary"
+            name="secondary"
+            required
+            minlength="4"
+            maxlength="8"
+            size="10"
+            onChange={(e) => {
+              console.log("event.target", e.name);
+              console.log("event.target", e.target);
+              console.log("event.target", e.target.value);
+              setSecondary(e.target.value);
+            }}
+          />
+        </div>
+        <div>
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
       </header>
     </div>
   );
