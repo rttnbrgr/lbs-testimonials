@@ -2,6 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const Foo = props => {
+  console.log('foo is running')
+  return (
+    <div className="cropcon--wrapper">
+      {/* Spacing */}
+      {/* Photo */}
+      {/* Text */}
+      {/* Logo */}
+      {props.children}
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
@@ -10,6 +23,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Foo>jakdfjkalsdjlkdfs</Foo>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -22,5 +36,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
