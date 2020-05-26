@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+/* NEW STYLES!!! */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.cc_wrapper {
+  /* hardcode to start */
+  width: 1200px;
+  height: 1200px;
+  background: #0f110c;
+  padding: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cc_profile-wrapper {
+  flex-basis: 544px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: hotpink;
+}
+
+.cc_text-wrapper {
+  flex-basis: 416px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background: papayawhip;
+}
