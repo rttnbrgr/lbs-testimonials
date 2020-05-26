@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -43,11 +43,38 @@ const Card = ({
   );
 };
 
+const CardForm = (props) => {
+  return (
+    <div>
+      <label for="name">Name (4 to 8 characters):</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        minlength="4"
+        maxlength="8"
+        size="10"
+      />
+    </div>
+  );
+};
+
+const defaultCardState = {
+  secondary: "Aaron",
+  title: "Draplin",
+  description: "Thursday at 6pm CST instagram live",
+};
+
 function App() {
+  const [cardState, setCardState] = useState(defaultCardState);
+  console.log("cardSTate", cardState);
   return (
     <div className="App">
       <header className="App-header">
-        <Foo>jakdfjkalsdjlkdfs</Foo>
+        <h1>State: hi</h1>
+        <Card />
+        {/* <CardForm /> */}
       </header>
     </div>
   );
