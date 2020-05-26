@@ -2,11 +2,16 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+const SampleProfile = {
+  secondary: "Aaron",
+  title: "Draplin",
+  description: "Thursday at 6pm CST instagram live",
+};
 // title, secondary, description = children
-const Foo = ({
-  title = "Title",
-  secondary = "Sedonary",
-  children = "We are live now",
+const Card = ({
+  title = SampleProfile.title,
+  secondary = SampleProfile.secondary,
+  children = SampleProfile.description,
 }) => {
   console.log("foo is running");
   return (
