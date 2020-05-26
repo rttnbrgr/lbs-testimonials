@@ -17,13 +17,18 @@ const Foo = ({
         <img src="https://picsum.photos/544/1040" alt="profile photo" />
       </div>
       <div className="cc_text-wrapper">
-        {/* Text */}
-        {secondary}
-        {title}
-        {/* add sepeartor */}
-        <br />
-        {children}
+        <div className="text--group">
+          {/* Text */}
+          <h2>
+            <span>{secondary}</span>
+            {title}
+          </h2>
+          <span className="text--seperator" />
+          <br />
+          {children}
+        </div>
         {/* Logo */}
+        <div className="cc_logo-placeholder" />
       </div>
     </div>
   );
