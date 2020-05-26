@@ -7,6 +7,11 @@ const SampleProfile = {
   title: "Draplin",
   description: "Thursday at 6pm CST instagram live",
 };
+
+const LogoPlaceholder = ({ children = "Logo Here" }) => (
+  <div className="cc_logo-placeholder">{children}</div>
+);
+
 // title, secondary, description = children
 const Card = ({
   title = SampleProfile.title,
@@ -32,6 +37,7 @@ const Card = ({
         </div>
         {/* Logo */}
         <div className="cc_logo-placeholder" />
+        <LogoPlaceholder />
       </div>
     </div>
   );
