@@ -2,7 +2,12 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-const Foo = (props) => {
+// title, secondary, description = children
+const Foo = ({
+  title = "Title",
+  secondary = "Sedonary",
+  children = "We are live now",
+}) => {
   console.log("foo is running");
   return (
     <div className="cc_wrapper">
@@ -13,10 +18,13 @@ const Foo = (props) => {
       </div>
       <div className="cc_text-wrapper">
         {/* Text */}
+        {secondary}
+        {title}
+        {/* add sepeartor */}
+        <br />
+        {children}
         {/* Logo */}
-        hi
       </div>
-      {props.children}
     </div>
   );
 };
