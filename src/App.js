@@ -81,6 +81,17 @@ const ThemeSwitcher = ({ currentTheme, setTheme }) => {
     </div>
   );
 };
+
+const Token = ({ name = "Green", hex = "#00ff00" }) => (
+  <div className="token">
+    <div className="token--swatch" />
+    <div>
+      <h2 className="token--name">{name}</h2>
+      <p className="token--hex">{hex}</p>
+    </div>
+  </div>
+);
+
 function App() {
   const [currentTheme, setTheme] = useState("dark");
   const [cardState, setCardState] = useState(defaultCardState);
@@ -94,13 +105,19 @@ function App() {
     <div className={`App theme--${currentTheme}`}>
       <header className="App-header">
         <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
+        <div className="token--row">
+          <Token />
+          <Token />
+          <Token />
+          <Token />
+        </div>
         <Card
           secondary={useSecondary}
           title={useTitle}
           description={useDescription}
         />
         {/* <CardForm /> */}
-        <div className="input-row">
+        <div className="input-row hide">
           <div>
             <label for="secondary">Secondary</label>
             <input
