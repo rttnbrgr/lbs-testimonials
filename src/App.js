@@ -8,28 +8,6 @@ import Card, { defaultCardState } from "./components/Card";
 import Token from "./components/Token";
 import theme from "./theme";
 
-const Button = styled.button`
-  color: hotpink;
-  background: ${(props) => props.theme.colors.primary};
-`;
-
-const CardForm = (props) => {
-  return (
-    <div>
-      <label for="name">Name (4 to 8 characters):</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        minlength="4"
-        maxlength="8"
-        size="10"
-      />
-    </div>
-  );
-};
-
 const ThemeSwitcher = ({ currentTheme, setTheme }) => {
   const toggleTheme = () => {
     console.log("toggle theme: ", "currentTheme: ", currentTheme);
@@ -72,7 +50,6 @@ function App() {
           <div className="hide">
             <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
             <div className="token--row">
-              <Button>pink button</Button>
               <Token />
               <Token />
               <Token />
