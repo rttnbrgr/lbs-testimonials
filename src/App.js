@@ -23,7 +23,10 @@ const Card = ({
     <div className="cc_wrapper">
       {/* Photo */}
       <div className="cc_profile-wrapper">
-        <img src="https://picsum.photos/544/1040" alt="profile photo" />
+        <img
+          src="https://picsum.photos/544/1040?grayscale"
+          alt="profile photo"
+        />
       </div>
 
       <div className="cc_text-wrapper">
