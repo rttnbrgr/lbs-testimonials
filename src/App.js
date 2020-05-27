@@ -69,6 +69,7 @@ const CardForm = (props) => {
 };
 
 function App() {
+  const [currentTheme, setTheme] = useState("dark");
   const [cardState, setCardState] = useState(defaultCardState);
   const [useSecondary, setSecondary] = useState(defaultCardState.secondary);
   const [useTitle, setTitle] = useState(defaultCardState.title);
