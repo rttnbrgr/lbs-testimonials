@@ -44,6 +44,18 @@ const ThemeSwitcher = ({ currentTheme, setTheme }) => {
   );
 };
 
+const StyledAppHero = styled.main`
+  background-color: ${({ theme }) => theme.colors.appBg};
+  color: ${({ theme }) => theme.colors.text};
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
 function App() {
   const [currentTheme, setTheme] = useState("dark");
   const [cardState, setCardState] = useState(defaultCardState);
@@ -56,7 +68,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className={`App theme--${currentTheme}`}>
-        <header className="App-header">
+        <StyledAppHero className="App-header">
           <div className="hide">
             <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
             <div className="token--row">
@@ -113,7 +125,7 @@ function App() {
               />
             </div>
           </div>
-        </header>
+        </StyledAppHero>
       </div>
     </ThemeProvider>
   );
