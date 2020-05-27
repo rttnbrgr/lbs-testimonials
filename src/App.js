@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
 import { StyledHr, StyledLogo } from "./components/misc";
 import Card, { defaultCardState } from "./components/Card";
+import Token from "./components/Token";
 import theme from "./theme";
 
 const Button = styled.button`
@@ -42,16 +43,6 @@ const ThemeSwitcher = ({ currentTheme, setTheme }) => {
     </div>
   );
 };
-
-const Token = ({ name = "Green", hex = "#00ff00" }) => (
-  <div className="token">
-    <div className="token--swatch" />
-    <div>
-      <h2 className="token--name">{name}</h2>
-      <p className="token--hex">{hex}</p>
-    </div>
-  </div>
-);
 
 function App() {
   const [currentTheme, setTheme] = useState("dark");
