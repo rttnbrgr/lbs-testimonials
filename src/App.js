@@ -6,7 +6,7 @@ import { ThemeProvider } from "emotion-theming";
 import { StyledHr, StyledLogo } from "./components/misc";
 import Card, { defaultCardState } from "./components/Card";
 import Token from "./components/Token";
-import theme from "./theme";
+import { themeDark, themeLight } from "./theme";
 
 const ThemeSwitcher = ({ currentTheme, setTheme }) => {
   const toggleTheme = () => {
@@ -44,7 +44,7 @@ function App() {
   );
   console.log("cardSTate", cardState);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
       <div className={`App theme--${currentTheme}`}>
         <StyledAppHero className="App-header">
           <div className="hide">
