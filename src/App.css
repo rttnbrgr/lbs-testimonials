@@ -115,3 +115,29 @@ p {
   background-color: var(--color-primary);
   margin: 32px 0;
 }
+
+input {
+}
+
+.input-row {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.input-row > div {
+  flex: 0 0 200px;
+}
+.input-row label {
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-row input {
+  display: block;
+}
+
+.input-row > * + * {
+  margin-left: 2rem;
+}
