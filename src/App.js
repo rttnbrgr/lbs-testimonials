@@ -4,16 +4,7 @@ import "./App.css";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
 import { StyledHr, StyledLogo } from "./components/misc";
-
-const theme = {
-  colors: {
-    primary: "#0a8697",
-    text: "white",
-    bg: "#0f110c",
-    asset: "#ffdc00",
-    primary: "hotpink",
-  },
-};
+import theme from "./theme";
 
 const Button = styled.button`
   color: hotpink;
