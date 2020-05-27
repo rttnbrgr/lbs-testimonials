@@ -79,6 +79,9 @@ function App() {
         <StyledAppHero className="App-header">
           <div className="hide">
             <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
+            <StyledThemeButton onClick={() => toggleTheme()}>
+              Theme: {currentTheme}
+            </StyledThemeButton>
             <div className="token--row">
               <Token />
               <Token />
