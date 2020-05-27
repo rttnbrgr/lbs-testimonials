@@ -24,21 +24,6 @@ html {
   box-sizing: inherit;
 }
 
-.App.theme--dark {
-  /* :root  */
-  --color-primary: #0a8697;
-  --color-text: white;
-  --color-bg: #0f110c;
-  --color-asset: #ffdc00;
-}
-
-.App.theme--light {
-  --color-primary: #ffdc00;
-  --color-text: #313131;
-  --color-bg: #dddddd;
-  --color-asset: #0a8697;
-}
-
 h2,
 h3,
 p,
