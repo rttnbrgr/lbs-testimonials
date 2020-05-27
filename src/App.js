@@ -36,6 +36,16 @@ const StyledAppHero = styled.main`
 
 function App() {
   const [currentTheme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    console.log("currentTheme2: ", currentTheme);
+    if (currentTheme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
   const [cardState, setCardState] = useState(defaultCardState);
   const [useSecondary, setSecondary] = useState(defaultCardState.secondary);
   const [useTitle, setTitle] = useState(defaultCardState.title);
