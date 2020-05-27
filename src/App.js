@@ -68,6 +68,19 @@ const CardForm = (props) => {
   );
 };
 
+const ThemeSwitcher = ({ currentTheme, setTheme }) => {
+  const toggleTheme = () => {
+    console.log("toggle theme: ", "currentTheme: ", currentTheme);
+    setTheme(currentTheme === "dark" ? "light" : "dark");
+  };
+
+  return (
+    <div className="theme-switcher">
+      <h3>Theme</h3>
+      <button onClick={() => toggleTheme()}>{currentTheme}</button>
+    </div>
+  );
+};
 function App() {
   const [currentTheme, setTheme] = useState("dark");
   const [cardState, setCardState] = useState(defaultCardState);
@@ -78,8 +91,9 @@ function App() {
   );
   console.log("cardSTate", cardState);
   return (
-    <div className="App">
+    <div className={`App theme--${currentTheme}`}>
       <header className="App-header">
+        <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
         <Card
           secondary={useSecondary}
           title={useTitle}
