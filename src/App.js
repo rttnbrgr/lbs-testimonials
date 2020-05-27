@@ -31,10 +31,6 @@ const defaultCardState = {
   description: "Thursday at 6pm CST instagram live",
 };
 
-const LogoPlaceholder = ({ children = "Logo Here" }) => (
-  <div className="cc_logo-placeholder">{children}</div>
-);
-
 const StyledCardWrapper = styled.div`
   /* hardcode to start */
   width: 1200px;
@@ -71,6 +67,41 @@ const StyledProfileColumn = styled.div`
   }
 `;
 
+const StyledTextColumn = styled.div`
+  flex-basis: 416px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .text--group {
+    padding-top: 40px;
+  }
+`;
+
+const StyledHr = styled.span`
+  display: block;
+  height: 8px;
+  width: 136px;
+  background-color: var(--color-primary);
+  background-color: ${({ theme }) => theme.colors.primary};
+  margin: 32px 0;
+`;
+
+const StyledLogo = styled.div`
+  width: 100%;
+  height: 5rem;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.primary};
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 // title, secondary, description = children
 const Card = ({
   title = defaultCardState.title,
@@ -88,18 +119,18 @@ const Card = ({
         />
       </StyledProfileColumn>
 
-      <div className="cc_text-wrapper">
+      <StyledTextColumn className="cc_text-wrapper">
         <div className="text--group">
           <h2>
             <span>{secondary}</span>
             {title}
           </h2>
-          <span className="text--seperator" />
+          <StyledHr />
           <p>{children}</p>
         </div>
         {/* Logo */}
-        <LogoPlaceholder />
-      </div>
+        <StyledLogo>Logo Here</StyledLogo>
+      </StyledTextColumn>
     </StyledCardWrapper>
   );
 };
