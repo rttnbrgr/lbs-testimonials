@@ -11,12 +11,6 @@ const Button = styled.button`
   background: ${(props) => props.theme.colors.primary};
 `;
 
-const SampleProfile = {
-  secondary: "Aaron",
-  title: "Draplin",
-  description: "Thursday at 6pm CST instagram live",
-};
-
 const defaultCardState = {
   secondary: "Aaron",
   title: "Draplin",
