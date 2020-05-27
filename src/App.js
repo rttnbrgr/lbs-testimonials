@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import styled from "@emotion/styled";
+
+const Button = styled.button`
+  color: hotpink;
+`;
 
 const SampleProfile = {
   secondary: "Aaron",
@@ -106,6 +111,7 @@ function App() {
       <header className="App-header">
         <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
         <div className="token--row">
+          <Button>pink button</Button>
           <Token />
           <Token />
           <Token />
