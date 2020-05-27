@@ -158,13 +158,15 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={`App theme--${currentTheme}`}>
         <header className="App-header">
-          <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
-          <div className="token--row">
-            <Button>pink button</Button>
-            <Token />
-            <Token />
-            <Token />
-            <Token />
+          <div className="hide">
+            <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
+            <div className="token--row">
+              <Button>pink button</Button>
+              <Token />
+              <Token />
+              <Token />
+              <Token />
+            </div>
           </div>
           <Card
             secondary={useSecondary}
