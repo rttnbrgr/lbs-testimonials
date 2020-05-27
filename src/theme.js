@@ -5,7 +5,6 @@ export const themeDark = {
     text: "white",
     bg: "#0f110c",
     asset: "#ffdc00",
-    primary: "hotpink",
   },
 };
 

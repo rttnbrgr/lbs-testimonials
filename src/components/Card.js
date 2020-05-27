@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { StyledHr, StyledLogo } from "./misc";
 
@@ -63,15 +63,11 @@ const Card = ({
   secondary = defaultCardState.secondary,
   children = defaultCardState.description,
 }) => {
-  console.log("foo is running");
   return (
     <StyledCardWrapper>
       {/* Photo */}
       <StyledProfileColumn>
-        <img
-          src="https://picsum.photos/544/1040?grayscale"
-          alt="profile photo"
-        />
+        <img src="https://picsum.photos/544/1040?grayscale" alt="profile" />
       </StyledProfileColumn>
 
       <StyledTextColumn className="cc_text-wrapper">
