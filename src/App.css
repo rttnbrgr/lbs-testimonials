@@ -96,37 +96,9 @@ p {
 
 /* utility */
 .hide {
-  display: none;
-}
-
-.token {
-  display: flex;
-  align-items: center;
-}
-
-.token + .token {
-  margin-left: 2rem;
+  /* display: none; */
 }
 
 .token--row {
   display: flex;
-}
-
-/* token */
-.token--swatch {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: green;
-  border: none;
-  margin-right: 1rem;
-}
-
-.token--name {
-  font-size: 20px;
-}
-
-.token--hex {
-  font-size: 12px;
-  font-family: monospace;
 }
