@@ -66,6 +66,8 @@ function App() {
     }
   };
 
+  const getTheme = () => (currentTheme === "dark" ? themeDark : themeLight);
+
   const [cardState, setCardState] = useState(defaultCardState);
   const [useSecondary, setSecondary] = useState(defaultCardState.secondary);
   const [useTitle, setTitle] = useState(defaultCardState.title);
@@ -73,20 +75,24 @@ function App() {
     defaultCardState.description
   );
   console.log("cardSTate", cardState);
+
   return (
     <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
       <div className={`App theme--${currentTheme}`}>
         <StyledAppHero className="App-header">
-          <div className="hide">
-            <ThemeSwitcher setTheme={setTheme} currentTheme={currentTheme} />
+          <div className="hid">
             <StyledThemeButton onClick={() => toggleTheme()}>
               Theme: {currentTheme}
             </StyledThemeButton>
             <div className="token--row">
-              <Token />
-              <Token />
-              <Token />
-              <Token />
+              {Object.keys(getTheme().colors).map((x) => {
+                /* dont show app token */
+                if (x === "appBg") {
+                  return;
+                } else {
+                  return <Token hex={getTheme().colors[x]} name={x} />;
+                }
+              })}
             </div>
           </div>
           <Card
