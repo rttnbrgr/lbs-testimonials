@@ -24,47 +24,23 @@ html {
   box-sizing: inherit;
 }
 
-:root {
+.App.theme--dark {
+  /* :root  */
   --color-primary: #0a8697;
   --color-text: white;
   --color-bg: #0f110c;
+  --color-asset: #ffdc00;
 }
 
-.cc_wrapper {
-  /* hardcode to start */
-  width: 1200px;
-  height: 1200px;
-  background-color: var(--color-bg);
-  padding: 80px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.cc_profile-wrapper {
-  flex-basis: 544px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  background-color: hotpink;
-}
-
-.cc_profile-wrapper img {
-  border-radius: 32px;
-}
-
-.cc_text-wrapper {
-  flex-basis: 416px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.text--group {
-  padding-top: 40px;
+.App.theme--light {
+  --color-primary: #ffdc00;
+  --color-text: #313131;
+  --color-bg: #dddddd;
+  --color-asset: #0a8697;
 }
 
 h2,
+h3,
 p,
 span {
   /* naive reset */
@@ -72,7 +48,6 @@ span {
   padding: 0;
   /* all font */
   font-family: sans-serif;
-  color: var(--color-text);
   line-height: 1;
 }
 
@@ -95,30 +70,7 @@ p {
   font-size: 32px;
 }
 
-.cc_logo-placeholder {
-  width: 100%;
-  height: 5rem;
-  /* border-radius: 8px; */
-  border: 10px solid var(--color-primary);
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.text--seperator {
-  display: block;
-  height: 8px;
-  width: 136px;
-  background-color: var(--color-primary);
-  margin: 32px 0;
-}
-
-input {
-}
-
+/* Inputs */
 .input-row {
   display: flex;
   padding: 2rem 0;
@@ -140,4 +92,41 @@ input {
 
 .input-row > * + * {
   margin-left: 2rem;
+}
+
+/* utility */
+.hide {
+  display: none;
+}
+
+.token {
+  display: flex;
+  align-items: center;
+}
+
+.token + .token {
+  margin-left: 2rem;
+}
+
+.token--row {
+  display: flex;
+}
+
+/* token */
+.token--swatch {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: green;
+  border: none;
+  margin-right: 1rem;
+}
+
+.token--name {
+  font-size: 20px;
+}
+
+.token--hex {
+  font-size: 12px;
+  font-family: monospace;
 }
