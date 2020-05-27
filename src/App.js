@@ -34,6 +34,26 @@ const StyledAppHero = styled.main`
   color: white;
 `;
 
+const StyledThemeButton = styled.button`
+  /* normalize */
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  /* custom */
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px 16px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  &:focus {
+    outline: none;
+  }
+`;
+
 function App() {
   const [currentTheme, setTheme] = useState("dark");
 
