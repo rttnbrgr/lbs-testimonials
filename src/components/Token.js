@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import React, { useState } from "react";
 import styled from "@emotion/styled";
 
 const StyledToken = styled.div`
   display: flex;
   align-items: center;
+  width: 200px;
 
   & + & {
     margin-left: 4rem;
@@ -16,7 +16,6 @@ const StyledToken = styled.div`
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    ${"" /* background: green; */}
     border: none;
     margin-right: 1rem;
   }

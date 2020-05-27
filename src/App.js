@@ -1,26 +1,10 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
-import { StyledHr, StyledLogo } from "./components/misc";
 import Card, { defaultCardState } from "./components/Card";
 import Token from "./components/Token";
 import { themeDark, themeLight } from "./theme";
-
-const ThemeSwitcher = ({ currentTheme, setTheme }) => {
-  const toggleTheme = () => {
-    console.log("toggle theme: ", "currentTheme: ", currentTheme);
-    setTheme(currentTheme === "dark" ? "light" : "dark");
-  };
-
-  return (
-    <div className="theme-switcher">
-      <h3>Theme</h3>
-      <button onClick={() => toggleTheme()}>{currentTheme}</button>
-    </div>
-  );
-};
 
 const StyledAppHero = styled.main`
   background-color: ${({ theme }) => theme.colors.appBg};
@@ -68,13 +52,12 @@ function App() {
 
   const getTheme = () => (currentTheme === "dark" ? themeDark : themeLight);
 
-  const [cardState, setCardState] = useState(defaultCardState);
+  // editable prop hoooks
   const [useSecondary, setSecondary] = useState(defaultCardState.secondary);
   const [useTitle, setTitle] = useState(defaultCardState.title);
   const [useDescription, setDescription] = useState(
     defaultCardState.description
   );
-  console.log("cardSTate", cardState);
 
   return (
     <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
@@ -85,12 +68,12 @@ function App() {
               Theme: {currentTheme}
             </StyledThemeButton>
             <div className="token--row">
-              {Object.keys(getTheme().colors).map((x) => {
+              {Object.keys(getTheme().colors).map((x, i) => {
                 /* dont show app token */
                 if (x === "appBg") {
-                  return;
+                  return null;
                 } else {
-                  return <Token hex={getTheme().colors[x]} name={x} />;
+                  return <Token hex={getTheme().colors[x]} name={x} key={i} />;
                 }
               })}
             </div>
@@ -103,15 +86,11 @@ function App() {
           {/* <CardForm /> */}
           <div className="input-row hide">
             <div>
-              <label for="secondary">Secondary</label>
+              <label htmlFor="secondary">Secondary</label>
               <input
                 type="text"
                 id="secondary"
                 name="secondary"
-                required
-                minlength="4"
-                // maxlength="8"
-                // size="10"
                 placeholder={defaultCardState.secondary}
                 onChange={(e) => {
                   console.log("event.target", e.name);
@@ -122,7 +101,7 @@ function App() {
               />
             </div>
             <div>
-              <label for="title">Title</label>
+              <label htmlFor="title">Title</label>
               <input
                 type="text"
                 id="title"
@@ -132,7 +111,7 @@ function App() {
               />
             </div>
             <div>
-              <label for="description">Description</label>
+              <label htmlFor="description">Description</label>
               <input
                 type="text"
                 id="description"
