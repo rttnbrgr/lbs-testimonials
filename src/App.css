@@ -24,10 +24,19 @@ html {
   box-sizing: inherit;
 }
 
-:root {
+.App.theme--dark {
+  /* :root  */
   --color-primary: #0a8697;
   --color-text: white;
   --color-bg: #0f110c;
+  --color-asset: #ffdc00;
+}
+
+.App.theme--light {
+  --color-primary: #ffdc00;
+  --color-text: #313131;
+  --color-bg: #dddddd;
+  --color-asset: #0a8697;
 }
 
 .cc_wrapper {
@@ -35,6 +44,7 @@ html {
   width: 1200px;
   height: 1200px;
   background-color: var(--color-bg);
+  color: var(--color-text);
   padding: 80px;
   display: flex;
   justify-content: space-between;
