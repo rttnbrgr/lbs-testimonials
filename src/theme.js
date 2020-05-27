@@ -1,5 +1,6 @@
 export const themeDark = {
   colors: {
+    appBg: "#282c34",
     primary: "#0a8697",
     text: "white",
     bg: "#0f110c",
@@ -10,6 +11,7 @@ export const themeDark = {
 
 export const themeLight = {
   colors: {
+    appBg: "#282c34",
     primary: "#ffdc00",
     text: "#313131",
     bg: "#dddddd",

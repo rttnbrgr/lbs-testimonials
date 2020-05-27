@@ -5,16 +5,8 @@ const StyledToken = styled.div`
   display: flex;
   align-items: center;
 
-  .token + .token {
-    margin-left: 2rem;
-  }
-
   & + & {
-    margin-left: 2rem;
-  }
-
-  .token--row {
-    display: flex;
+    margin-left: 4rem;
   }
 
   /* token */
