@@ -35,7 +35,7 @@ const LogoPlaceholder = ({ children = "Logo Here" }) => (
   <div className="cc_logo-placeholder">{children}</div>
 );
 
-const CardWrapper = styled.div`
+const StyledCardWrapper = styled.div`
   /* hardcode to start */
   width: 1200px;
   height: 1200px;
@@ -46,6 +46,31 @@ const CardWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const StyledProfileColumn = styled.div`
+  flex-basis: 544px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    border-radius: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${({ theme }) => theme.colors.asset};
+    opacity: 0.5;
+  }
+
+  img {
+    border-radius: 32px;
+  }
+`;
+
 // title, secondary, description = children
 const Card = ({
   title = defaultCardState.title,
@@ -54,14 +79,14 @@ const Card = ({
 }) => {
   console.log("foo is running");
   return (
-    <CardWrapper>
+    <StyledCardWrapper>
       {/* Photo */}
-      <div className="cc_profile-wrapper">
+      <StyledProfileColumn>
         <img
           src="https://picsum.photos/544/1040?grayscale"
           alt="profile photo"
         />
-      </div>
+      </StyledProfileColumn>
 
       <div className="cc_text-wrapper">
         <div className="text--group">
@@ -75,7 +100,7 @@ const Card = ({
         {/* Logo */}
         <LogoPlaceholder />
       </div>
-    </CardWrapper>
+    </StyledCardWrapper>
   );
 };
 
