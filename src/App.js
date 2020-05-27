@@ -35,6 +35,17 @@ const LogoPlaceholder = ({ children = "Logo Here" }) => (
   <div className="cc_logo-placeholder">{children}</div>
 );
 
+const CardWrapper = styled.div`
+  /* hardcode to start */
+  width: 1200px;
+  height: 1200px;
+  background-color: ${({ theme }) => theme.colors.bg};
+  color: ${({ theme }) => theme.colors.text};
+  padding: 80px;
+  display: flex;
+  justify-content: space-between;
+`;
+
 // title, secondary, description = children
 const Card = ({
   title = defaultCardState.title,
@@ -43,7 +54,7 @@ const Card = ({
 }) => {
   console.log("foo is running");
   return (
-    <div className="cc_wrapper">
+    <CardWrapper>
       {/* Photo */}
       <div className="cc_profile-wrapper">
         <img
@@ -64,7 +75,7 @@ const Card = ({
         {/* Logo */}
         <LogoPlaceholder />
       </div>
-    </div>
+    </CardWrapper>
   );
 };
 
