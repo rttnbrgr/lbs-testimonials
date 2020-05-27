@@ -8,15 +8,21 @@ const SampleProfile = {
   description: "Thursday at 6pm CST instagram live",
 };
 
+const defaultCardState = {
+  secondary: "Aaron",
+  title: "Draplin",
+  description: "Thursday at 6pm CST instagram live",
+};
+
 const LogoPlaceholder = ({ children = "Logo Here" }) => (
   <div className="cc_logo-placeholder">{children}</div>
 );
 
 // title, secondary, description = children
 const Card = ({
-  title = SampleProfile.title,
-  secondary = SampleProfile.secondary,
-  children = SampleProfile.description,
+  title = defaultCardState.title,
+  secondary = defaultCardState.secondary,
+  children = defaultCardState.description,
 }) => {
   console.log("foo is running");
   return (
@@ -62,16 +68,10 @@ const CardForm = (props) => {
   );
 };
 
-const defaultCardState = {
-  secondary: "Aaron",
-  title: "Draplin",
-  description: "Thursday at 6pm CST instagram live",
-};
-
 function App() {
   const [cardState, setCardState] = useState(defaultCardState);
   const [useSecondary, setSecondary] = useState(defaultCardState.secondary);
-  const [useTitle, setTitle] = useState(defaultCardState.secondary);
+  const [useTitle, setTitle] = useState(defaultCardState.title);
   const [useDescription, setDescription] = useState(
     defaultCardState.description
   );
@@ -79,9 +79,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>State: hi</h1>
-
-        <Card />
+        <Card
+          secondary={useSecondary}
+          title={useTitle}
+          description={useDescription}
+        />
         {/* <CardForm /> */}
         <h3>Secondary: {useSecondary}</h3>
         <h3>Title: {useTitle}</h3>
