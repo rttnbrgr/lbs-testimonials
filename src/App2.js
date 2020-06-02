@@ -8,6 +8,7 @@ import { themeDark, themeLight } from "./theme";
 
 const StyledAppHero = styled.main`
   background-color: ${({ theme }) => theme.colors.appBg};
+  background-color: white;
   color: ${({ theme }) => theme.colors.text};
   min-height: 100vh;
   display: flex;
@@ -18,23 +19,72 @@ const StyledAppHero = styled.main`
   color: white;
 `;
 
-const StyledThemeButton = styled.button`
-  /* normalize */
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  /* custom */
-  font-family: monospace;
-  font-size: 12px;
-  line-height: 1;
-  padding: 8px 16px;
-  background: transparent;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase;
-  &:focus {
-    outline: none;
+const StyledReview = styled.article`
+  width: 400px;
+  height: 300px;
+  background: black;
+  position: relative;
+  font-size: 0.6em;
+  padding: 2rem;
+  padding-bottom: 40px; // compensate for posiiton meta
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  .meta {
+    padding: 0.25em 0.5rem;
+    background: white;
+    border: 4px solid black;
+    color: black;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    width: content-width;
+    display: inline-block;
+    transform: translate3d(32px, -50%, 0);
+
+    h2 {
+      font-size: 1em;
+      line-height: 1.4;
+      font-family: "Helvetica", sans-serif;
+      font-weight: lighter;
+    }
+    h3 {
+      font-size: 0.875rem;
+      line-height: 1.4;
+      font-family: "Helvetica", sans-serif;
+      font-weight: bold;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  &.flip {
+    .avatar {
+      top: 0;
+      left: initial;
+      right: 0;
+      transform: translate3d(50%, -50%, 0);
+    }
+  }
+`;
+
+const StyledHeader = styled.div`
+  padding: 1em;
+  text-align: center;
+  color: black;
+  h1 {
+    font-size: 4em;
   }
 `;
 
@@ -62,65 +112,25 @@ function App() {
   return (
     <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
       <div className={`App theme--${currentTheme}`}>
+        <StyledHeader>
+          <h1>Testimonials</h1>
+        </StyledHeader>
         <StyledAppHero className="App-header">
-          <h1>new app</h1>
-          <div className="hid">
-            <StyledThemeButton onClick={() => toggleTheme()}>
-              Theme: {currentTheme}
-            </StyledThemeButton>
-            <div className="token--row">
-              {Object.keys(getTheme().colors).map((x, i) => {
-                /* dont show app token */
-                if (x === "appBg") {
-                  return null;
-                } else {
-                  return <Token hex={getTheme().colors[x]} name={x} key={i} />;
-                }
-              })}
+          <StyledReview>
+            I'm baby craft beer adaptogen authentic, pug next level pickled
+            offal 90's green juice. IPhone everyday carry kinfolk retro,
+            coloring book banh mi tbh 8-bit bitters.
+            <a href="#">Read More</a>
+            <img
+              src="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg"
+              alt="profile"
+              className="avatar"
+            />
+            <div className="meta">
+              <h2>Ryan Parr</h2>
+              <h3>VP Design, Sprinklr</h3>
             </div>
-          </div>
-          <Card
-            secondary={useSecondary}
-            title={useTitle}
-            description={useDescription}
-          />
-          {/* <CardForm /> */}
-          <div className="input-row hide">
-            <div>
-              <label htmlFor="secondary">Secondary</label>
-              <input
-                type="text"
-                id="secondary"
-                name="secondary"
-                placeholder={defaultCardState.secondary}
-                onChange={(e) => {
-                  console.log("event.target", e.name);
-                  console.log("event.target", e.target);
-                  console.log("event.target", e.target.value);
-                  setSecondary(e.target.value);
-                }}
-              />
-            </div>
-            <div>
-              <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                id="title"
-                name="title"
-                placeholder={defaultCardState.title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="description">Description</label>
-              <input
-                type="text"
-                id="description"
-                name="description"
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-          </div>
+          </StyledReview>
         </StyledAppHero>
       </div>
     </ThemeProvider>
