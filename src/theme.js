@@ -10,7 +10,7 @@ export const themeDark = {
 
 export const themeLight = {
   colors: {
-    appBg: "#282c34",
+    appBg: "#ffffff",
     primary: "#ffdc00",
     text: "#313131",
     bg: "#dddddd",
