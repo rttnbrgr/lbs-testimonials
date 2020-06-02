@@ -15,8 +15,14 @@ const StyledAppHero = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+`;
+
+const StyledReviewColumn = styled.div`
+  ${"" /* width: 80%; */}
+  margin: 0 auto;
+  background: purple;
+  padding: 2em;
 `;
 
 const StyledReview = styled.article`
@@ -24,9 +30,14 @@ const StyledReview = styled.article`
   height: 300px;
   background: black;
   position: relative;
-  font-size: 0.6em;
+  font-size: 1em;
   padding: 2rem;
   padding-bottom: 40px; // compensate for posiiton meta
+  ${"" /* margin-bottom: 4rem; */}
+
+  & + & {
+    margin-top: 4rem;
+  }
 
   .avatar {
     width: 64px;
@@ -67,6 +78,12 @@ const StyledReview = styled.article`
 
   a {
     display: block;
+    padding: 1em 1em 1em 0;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
   }
 
   &.flip {
@@ -78,6 +95,32 @@ const StyledReview = styled.article`
     }
   }
 `;
+
+const SampleReview = {
+  link: "https://medium.com/@ryanparr/6e0920bfa5d6",
+  name: "Ryan Parr",
+  title: "VP Design, Sprinklr",
+  avatar:
+    "https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg",
+  reviewText:
+    "He has contributed extreme value while on the Sprinklr Product Design... Because of his work we have saved countless hours of design & dev work.",
+};
+
+const Review = ({ children, link, avatar, name, title }) => (
+  <StyledReview>
+    {children}
+    {link && (
+      <a href="#" target="_blank">
+        Read More ↗
+      </a>
+    )}
+    <img src={avatar} alt="profile" className="avatar" />
+    <div className="meta">
+      <h2>{name}</h2>
+      <h3>{title}</h3>
+    </div>
+  </StyledReview>
+);
 
 const StyledHeader = styled.div`
   padding: 1em;
@@ -109,6 +152,8 @@ function App() {
     defaultCardState.description
   );
 
+  const { link, name, title, avatar } = SampleReview;
+
   return (
     <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
       <div className={`App theme--${currentTheme}`}>
@@ -116,21 +161,26 @@ function App() {
           <h1>Testimonials</h1>
         </StyledHeader>
         <StyledAppHero className="App-header">
-          <StyledReview>
-            I'm baby craft beer adaptogen authentic, pug next level pickled
-            offal 90's green juice. IPhone everyday carry kinfolk retro,
-            coloring book banh mi tbh 8-bit bitters.
-            <a href="#">Read More</a>
-            <img
-              src="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg"
-              alt="profile"
-              className="avatar"
-            />
-            <div className="meta">
-              <h2>Ryan Parr</h2>
-              <h3>VP Design, Sprinklr</h3>
-            </div>
-          </StyledReview>
+          <StyledReviewColumn>
+            <Review link={link} name={name} title={title} avatar={avatar}>
+              {SampleReview.reviewText}
+            </Review>
+            <StyledReview>
+              I'm baby craft beer adaptogen authentic, pug next level pickled
+              offal 90's green juice. IPhone everyday carry kinfolk retro,
+              coloring book banh mi tbh 8-bit bitters.
+              <a href="#">Read More</a>
+              <img
+                src="https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg"
+                alt="profile"
+                className="avatar"
+              />
+              <div className="meta">
+                <h2>Ryan Parr</h2>
+                <h3>VP Design, Sprinklr</h3>
+              </div>
+            </StyledReview>
+          </StyledReviewColumn>
         </StyledAppHero>
       </div>
     </ThemeProvider>
