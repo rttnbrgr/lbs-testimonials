@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { StyledHr } from "./misc";
 
 const StyledReview = styled.article`
   ${"" /* width: 400px; */}
@@ -15,27 +16,29 @@ const StyledReview = styled.article`
     margin-top: 4rem;
   }
 
+
+
   .avatar {
     width: 64px;
     height: 64px;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
+    ${"" /* border-radius: 50%; */}
+    ${"" /* position: absolute; */}
+    ${"" /* top: 0;
     left: 0;
-    transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0); */}
   }
 
   .meta {
     padding: 0.25em 0.5rem;
     background: white;
-    border: 4px solid black;
+    border: 2px solid black;
     color: black;
     position: absolute;
     top: 100%;
     right: 0;
     width: 50%;
     width: content-width;
-    display: inline-block;
+    display: flex;
     transform: translate3d(32px, -50%, 0);
 
     h2 {
@@ -72,6 +75,16 @@ const StyledReview = styled.article`
   }
 `;
 
+const StyledUser = styled.div`
+  border: 2px solid black;
+  background: pink;
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+`;
+
 export const SampleReview = {
   link: "https://medium.com/@ryanparr/6e0920bfa5d6",
   name: "Ryan Parr",
@@ -90,11 +103,13 @@ const Review = ({ children, link, avatar, name, title }) => (
         Read More ↗
       </a>
     )}
-    <img src={avatar} alt="profile" className="avatar" />
-    <div className="meta">
-      <h2>{name}</h2>
-      <h3>{title}</h3>
-    </div>
+    <StyledUser className="user">
+      <img src={avatar} alt="profile" className="avatar" />
+      <div className="meta">
+        <h2>{name}</h2>
+        <h3>{title}</h3>
+      </div>
+    </StyledUser>
   </StyledReview>
 );
 
