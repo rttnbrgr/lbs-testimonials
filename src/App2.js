@@ -17,7 +17,7 @@ const StyledAppHero = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: white;
 `;
 
@@ -26,6 +26,7 @@ const StyledReviewColumn = styled.div`
   padding: 1em;
   /**debug */
   ${"" /* background: purple; */}
+  max-width: 500px;
 `;
 
 const StyledHeader = styled.div`
