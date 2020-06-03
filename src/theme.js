@@ -1,9 +1,9 @@
 export const themeDark = {
   colors: {
-    appBg: "#282c34",
+    appBg: "#000",
     primary: "#0a8697",
     text: "white",
-    bg: "#0f110c",
+    bg: "#000",
     asset: "#ffdc00",
   },
 };
