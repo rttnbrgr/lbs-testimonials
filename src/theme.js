@@ -12,8 +12,8 @@ export const themeLight = {
   colors: {
     appBg: "#ffffff",
     primary: "#ffdc00",
-    text: "#313131",
-    bg: "#dddddd",
+    text: "#000",
+    bg: "#fff",
     asset: "#0a8697",
   },
 };

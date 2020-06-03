@@ -6,6 +6,8 @@ import Card, { defaultCardState } from "./components/Card";
 import Token from "./components/Token";
 import { themeDark, themeLight } from "./theme";
 import Review, { SampleReview } from "./components/Review";
+import dan from "./assets/dan.jpeg";
+import reviews, { reviewDan } from "./data";
 
 const StyledAppHero = styled.main`
   background-color: ${({ theme }) => theme.colors.appBg};
@@ -15,24 +17,29 @@ const StyledAppHero = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: white;
 `;
 
 const StyledReviewColumn = styled.div`
-  ${"" /* width: 80%; */}
   margin: 0 auto;
-  background: purple;
-  padding: 2em;
+  padding: 1em;
+  /**debug */
+  ${"" /* background: purple; */}
+  max-width: 500px;
 `;
 
 const StyledHeader = styled.div`
   background-color: ${({ theme }) => theme.colors.appBg};
-  color: black;
-  padding: 1.5em 0;
   text-align: center;
+
   h1 {
-    font-size: 3em;
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 1.5em;
+    line-height: 1.3333333333;
+    padding: 0.83333333333em 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
   }
 
   @media screen and (min-width: 600px) {
@@ -73,9 +80,20 @@ function App() {
         </StyledHeader>
         <StyledAppHero className="App-header">
           <StyledReviewColumn>
-            <Review link={link} name={name} title={title} avatar={avatar}>
-              {SampleReview.reviewText}
-            </Review>
+            {reviews.map((review, i) => {
+              const { link, name, title, avatar, reviewText } = review;
+              return (
+                <Review
+                  link={link}
+                  name={name}
+                  title={title}
+                  avatar={avatar}
+                  reverse={i % 2}
+                >
+                  {reviewText}
+                </Review>
+              );
+            })}
           </StyledReviewColumn>
         </StyledAppHero>
       </div>
