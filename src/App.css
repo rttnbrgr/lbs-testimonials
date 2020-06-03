@@ -13,6 +13,7 @@ html {
   box-sizing: inherit;
 }
 
+h1,
 h2,
 h3,
 p,
@@ -25,10 +26,10 @@ span {
   line-height: 1;
 }
 
-h2 {
+/* h2 {
   font-size: 96px;
   font-family: sans-serif;
-}
+} */
 
 h2 > span {
   display: block;
@@ -38,11 +39,11 @@ h2 > span {
   margin-bottom: 16px;
 }
 
-p {
+/* p {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 32px;
-}
+} */
 
 /* Inputs */
 .input-row {
