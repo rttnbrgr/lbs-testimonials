@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
+import { Global, css } from "@emotion/core";
 import Card, { defaultCardState } from "./components/Card";
 import Token from "./components/Token";
 import { themeDark, themeLight } from "./theme";
@@ -11,7 +12,6 @@ import reviews, { reviewDan } from "./data";
 
 const StyledAppHero = styled.main`
   background-color: ${({ theme }) => theme.colors.appBg};
-  background-color: white;
   color: ${({ theme }) => theme.colors.text};
   min-height: 100vh;
   display: flex;
@@ -25,13 +25,47 @@ const StyledReviewColumn = styled.div`
   margin: 0 auto;
   padding: 1em;
   /**debug */
-  ${"" /* background: purple; */}
   max-width: 500px;
 `;
+
+const StrokeButtonStyles = css`
+  background-color: blue;
+`;
+
+const StyledButton = styled.button`
+  border: 2px solid ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.bg};
+  color: ${({ theme }) => theme.colors.text};
+  padding: 0 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: inherit;
+  &:focus {
+    outline: none;
+  }
+  /* link styles */
+  text-decoration: none;
+`;
+
+const StyledLinkButton = StyledButton.withComponent("a");
 
 const StyledHeader = styled.div`
   background-color: ${({ theme }) => theme.colors.appBg};
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+
+  button {
+    width: 3.5rem;
+  }
 
   h1 {
     color: ${({ theme }) => theme.colors.text};
@@ -76,7 +110,9 @@ function App() {
     <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
       <div className={`App theme--${currentTheme}`}>
         <StyledHeader>
+          <StyledLinkButton href="http://rttnbrgr.com">Home</StyledLinkButton>
           <h1>Testimonials</h1>
+          <StyledButton onClick={() => toggleTheme()}>Day</StyledButton>
         </StyledHeader>
         <StyledAppHero className="App-header">
           <StyledReviewColumn>
