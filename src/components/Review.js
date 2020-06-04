@@ -39,6 +39,16 @@ const StyledReview = styled.article`
       border-top: 24px solid ${({ theme }) => theme.colors.text};
       border-right: 24px solid transparent;
     }
+
+    /* medium */
+    @media screen and (min-width: 768px) {
+      background-color: red;
+    }
+
+    /* large */
+    @media screen and (min-width: 1440px) {
+      background-color: blue;
+    }
   }
 
   a {
