@@ -17,10 +17,12 @@ const StyledReview = styled.article`
 
   margin-left: 1rem;
   margin: 0 0 32px 16px;
+
   p {
     font-family: "Helvetica", sans-serif;
     font-size: 1em;
     line-height: 1.25;
+    color: ${({ theme }) => theme.colors.bg};
   }
 
   .box {

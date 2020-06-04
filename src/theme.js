@@ -1,20 +1,16 @@
 export const themeDark = {
   colors: {
-    appBg: "#282c34",
-    primary: "#0a8697",
-    text: "white",
-    bg: "#0f110c",
-    asset: "#ffdc00",
+    appBg: "#000",
+    text: "#fff",
+    bg: "#000",
   },
 };
 
 export const themeLight = {
   colors: {
-    appBg: "#ffffff",
-    primary: "#ffdc00",
+    appBg: "#fff",
     text: "#000",
     bg: "#fff",
-    asset: "#0a8697",
   },
 };
 
