@@ -4,7 +4,6 @@ import { css } from "@emotion/core";
 import User from "./User";
 
 const StyledReview = styled.article`
-  background: purple;
   & + & {
     margin-top: 2.5rem;
   }
@@ -33,7 +32,6 @@ const StyledReviewBox = styled.div`
     left: 0;
     top: 100%;
     border-top: 24px solid ${({ theme }) => theme.colors.text};
-    border-color: hotpink;
     border-right: 24px solid transparent;
   }
 
