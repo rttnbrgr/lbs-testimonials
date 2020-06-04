@@ -44,3 +44,15 @@ export const StyledUser = styled.div`
       }
     `};
 `;
+
+const User = ({ reverse, avatar, name, title }) => (
+  <StyledUser className="user" reverse={reverse}>
+    <img src={avatar} alt="profile" className="avatar" />
+    <div className="meta">
+      <h2>{name}</h2>
+      <h3>{title}</h3>
+    </div>
+  </StyledUser>
+);
+
+export default User;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import { StyledUser } from "./User";
+import User from "./User";
 
 const StyledReviewGroup = styled.article`
   & + & {
@@ -13,7 +13,6 @@ const StyledReviewGroup = styled.article`
 const StyledReview = styled.article`
   background: rgba(0, 200, 0, 0.3);
   position: relative;
-
   margin-left: 1rem;
   margin: 0 0 32px 16px;
 
@@ -79,13 +78,7 @@ const Review = ({ children, link, avatar, name, title, reverse = false }) => (
         <p>{children}</p>
       </div>
     </StyledReview>
-    <StyledUser className="user" reverse={reverse}>
-      <img src={avatar} alt="profile" className="avatar" />
-      <div className="meta">
-        <h2>{name}</h2>
-        <h3>{title}</h3>
-      </div>
-    </StyledUser>
+    <User avatar={avatar} name={name} title={title} reverse={reverse} />
   </StyledReviewGroup>
 );
 
