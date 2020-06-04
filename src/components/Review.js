@@ -47,17 +47,19 @@ const StyledReviewBox = styled.div`
     display: inline-block;
     left: 0;
     top: 100%;
-    border-top: 24px solid ${({ theme }) => theme.colors.text};
-    border-right: 24px solid transparent;
+    border-top: 1.5em solid ${({ theme }) => theme.colors.text};
+    border-right: 1.5em solid transparent;
   }
 
   /* medium */
   @media screen and (min-width: 768px) {
+    ${textStyle2}
     background-color: red;
   }
 
   /* large */
   @media screen and (min-width: 1440px) {
+    ${textStyle3}
     background-color: blue;
   }
 
@@ -76,7 +78,7 @@ const StyledReviewBox = styled.div`
         right: 0;
         border-right: none;
         right: 0;
-        border-left: 24px solid transparent;
+        border-left: 1.5em solid transparent;
       }
       .box {
       }
