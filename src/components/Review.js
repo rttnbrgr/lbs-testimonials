@@ -69,20 +69,6 @@ const StyledReview = styled.article`
     }
   }
 
-  .triangle-row {
-    position: relative;
-    height: 24px;
-  }
-  .triangle {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    top: 0;
-    border-top: 24px solid ${({ theme }) => theme.colors.text};
-    border-right: 24px solid transparent;
-    display: none;
-  }
-
   /* Reverse */
   ${({ reverse, theme }) =>
     reverse &&
@@ -101,15 +87,6 @@ const StyledReview = styled.article`
           right: 0;
           border-left: 24px solid transparent;
         }
-      }
-
-      .triangle {
-        /* reset */
-        left: initial;
-        border-right: none;
-        /* reverse */
-        right: 0;
-        border-left: 24px solid transparent;
       }
     `};
 `;
@@ -137,9 +114,6 @@ const Review = ({ children, link, avatar, name, title, reverse = false }) => (
           </div>
         )}
       </div>
-      {/* <div className="triangle-row">
-        <span className="triangle" />
-      </div> */}
     </StyledReview>
     <StyledUser className="user" reverse={reverse}>
       <img src={avatar} alt="profile" className="avatar" />
