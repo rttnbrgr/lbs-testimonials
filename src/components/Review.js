@@ -3,6 +3,23 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import User from "./User";
 
+// 16:20
+const textStyle1 = () => css`
+  font-size: 1rem;
+  line-height: 1.25;
+`;
+
+// 24:32
+const textStyle2 = () => css`
+  font-size: 1.5rem;
+  line-height: 2rem;
+`;
+
+// 40:48
+const textStyle3 = () => css`
+  font-size: 2.5rem;
+  line-height: 3rem;
+`;
 const StyledReview = styled.article`
   & + & {
     margin-top: 2.5rem;
@@ -10,20 +27,19 @@ const StyledReview = styled.article`
 `;
 
 const StyledReviewBox = styled.div`
+  ${textStyle1}
   background: ${({ theme }) => theme.colors.text};
   position: relative;
   padding: 1em;
-  margin: 0 0 32px 16px;
+  margin: 0 0 2em 1em;
 
   p {
     font-family: "Helvetica", sans-serif;
-    font-size: 1em;
-    line-height: 1.25;
     color: ${({ theme }) => theme.colors.bg};
+    font-size: 1em;
+    line-height: inherit;
   }
 
-  .box {
-  }
   /* triangle */
   &::after {
     content: "";
