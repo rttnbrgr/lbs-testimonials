@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-
-import { StyledHr } from "./misc";
 import { StyledUser } from "./User";
 
 const StyledReviewGroup = styled.article`
@@ -90,16 +88,6 @@ const StyledReview = styled.article`
       }
     `};
 `;
-
-export const SampleReview = {
-  link: "https://medium.com/@ryanparr/6e0920bfa5d6",
-  name: "Ryan Parr",
-  title: "VP Design, Sprinklr",
-  avatar:
-    "https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg",
-  reviewText:
-    "He has contributed extreme value while on the Sprinklr Product Design team... Because of his work we have saved countless hours of design & dev work.",
-};
 
 const Review = ({ children, link, avatar, name, title, reverse = false }) => (
   <StyledReviewGroup>

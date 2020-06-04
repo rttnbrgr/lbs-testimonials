@@ -6,7 +6,7 @@ import { Global, css } from "@emotion/core";
 import Card, { defaultCardState } from "./components/Card";
 import Token from "./components/Token";
 import { themeDark, themeLight } from "./theme";
-import Review, { SampleReview } from "./components/Review";
+import Review from "./components/Review";
 import dan from "./assets/dan.jpeg";
 import reviews, { reviewDan } from "./data";
 
@@ -111,8 +111,6 @@ function App() {
   const [useDescription, setDescription] = useState(
     defaultCardState.description
   );
-
-  const { link, name, title, avatar } = SampleReview;
 
   return (
     <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
