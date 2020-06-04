@@ -31,10 +31,20 @@ const StyledReviewColumn = styled.div`
   padding-bottom: 3em;
   /**debug */
   max-width: 500px;
-`;
+  width: 100%;
 
-const StrokeButtonStyles = css`
-  background-color: blue;
+  /* medium */
+  @media screen and (min-width: 768px) {
+    padding: 0 0 4em;
+    width: 75%;
+    max-width: 768px;
+  }
+
+  /* large */
+  @media screen and (min-width: 1440px) {
+    width: 62.5%;
+    max-width: 1440px;
+  }
 `;
 
 const StyledButton = styled.button`
