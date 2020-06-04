@@ -9,7 +9,6 @@ const danFulltext =
   "I was continuously impressed both by Nathan's ability to take on new technologies and his ability to thoughtfully and meaningfully engage in important dialog and planning for products and processes. \n Product development can be messy, but I found I was excited any time I knew that Nathan was involved in a key discussion. He has a knack for clarifying key issues and decisions in a tactful and disarming way.";
 
 export const reviewDan = {
-  // link: "https://medium.com/@ryanparr/6e0920bfa5d6",
   name: "Dan Blaisdell",
   title: "Director of Product Development, Sprinklr",
   avatar: dan,
