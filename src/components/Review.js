@@ -50,23 +50,6 @@ const StyledReview = styled.article`
     }
   }
 
-  a {
-    margin-top: 8px;
-    display: inline-block;
-    padding: 0.25em 0.5em 0.25em 0;
-    font-family: "Helvetica", sans-serif;
-    font-weight: bold;
-    font-size: 0.75em;
-    line-height: 1.33333333;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: ${({ theme }) => theme.colors.bg};
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.asset};
-    }
-  }
-
   /* Reverse */
   ${({ reverse, theme }) =>
     reverse &&
@@ -94,13 +77,6 @@ const Review = ({ children, link, avatar, name, title, reverse = false }) => (
     <StyledReview reverse={reverse}>
       <div className="box">
         <p>{children}</p>
-        {link && false && (
-          <div>
-            <a href="#" target="_blank">
-              Read More ↗
-            </a>
-          </div>
-        )}
       </div>
     </StyledReview>
     <StyledUser className="user" reverse={reverse}>
