@@ -28,6 +28,7 @@ const StyledAppHero = styled.main`
 const StyledReviewColumn = styled.div`
   margin: 0 auto;
   padding: 1em;
+  padding-bottom: 3em;
   /**debug */
   max-width: 500px;
 `;
@@ -119,7 +120,9 @@ function App() {
         <StyledHeader>
           <StyledLinkButton href="http://rttnbrgr.com">Home</StyledLinkButton>
           <h1>Testimonials</h1>
-          <StyledButton onClick={() => toggleTheme()}>Day</StyledButton>
+          <StyledButton onClick={() => toggleTheme()}>
+            {currentTheme}
+          </StyledButton>
         </StyledHeader>
         <StyledAppHero className="App-header">
           <StyledReviewColumn>
