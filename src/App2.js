@@ -81,7 +81,7 @@ const StyledHeader = styled.div`
     letter-spacing: -0.5px;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     justify-content: center;
     padding: 1em 0;
     h1 {
