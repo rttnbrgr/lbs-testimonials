@@ -10,6 +10,10 @@ import Review, { SampleReview } from "./components/Review";
 import dan from "./assets/dan.jpeg";
 import reviews, { reviewDan } from "./data";
 
+const getTypeStyle = (size) => {
+  css``;
+};
+
 const StyledAppHero = styled.main`
   background-color: ${({ theme }) => theme.colors.appBg};
   color: ${({ theme }) => theme.colors.text};
@@ -77,7 +81,10 @@ const StyledHeader = styled.div`
   }
 
   @media screen and (min-width: 600px) {
+    justify-content: center;
+    padding: 1em 0;
     h1 {
+      padding: 0 1em;
       font-size: 4em;
     }
   }
