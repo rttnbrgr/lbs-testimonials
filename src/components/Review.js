@@ -3,6 +3,12 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import User from "./User";
 
+// 12:16
+const textStyle0 = () => css`
+  font-size: 0.75rem;
+  line-height: 1rem;
+`;
+
 // 16:20
 const textStyle1 = () => css`
   font-size: 1rem;
@@ -20,7 +26,19 @@ const textStyle3 = () => css`
   font-size: 2.5rem;
   line-height: 3rem;
 `;
+
 const StyledReview = styled.article`
+  ${textStyle1}
+  /* medium */
+  @media screen and (min-width: 768px) {
+    ${textStyle2}
+  }
+
+  /* large */
+  @media screen and (min-width: 1440px) {
+    ${textStyle3}
+  }
+
   & + & {
     margin-top: 2.5rem;
   }
@@ -95,3 +113,5 @@ const Review = ({ children, link, avatar, name, title, reverse = false }) => (
 );
 
 export default Review;
+
+export { textStyle0, textStyle1, textStyle2, textStyle3 };
