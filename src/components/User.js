@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
+import { textStyle0, textStyle1, textStyle2, textStyle3 } from "./Review";
 
-export const StyledUser = styled.div`
+const StyledUser = styled.div`
   display: flex;
   margin-top: 0.5rem;
+  font-size: inherit;
 
   .avatar {
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
+    flex: 0 0 3em;
+    width: 3em;
+    height: 3em;
     border: 2px solid ${({ theme }) => theme.colors.text};
   }
 
@@ -23,11 +25,41 @@ export const StyledUser = styled.div`
     border-left: none;
     background: ${({ theme }) => theme.colors.bg};
 
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-family: "Helvetica", sans-serif;
+    padding: 0 1em;
+
     h2,
     h3 {
       font-family: "Helvetica", sans-serif;
-      font-size: 0.75em;
-      line-height: 1.33333333;
+      font-size: 1em;
+      line-height: inherit;
+    }
+  }
+
+  /* medium */
+  @media screen and (min-width: 768px) {
+    .avatar,
+    .meta {
+      border-width: 4px;
+    }
+
+    .meta {
+      font-size: 1rem;
+      line-height: 24px;
+    }
+  }
+
+  /* large */
+  @media screen and (min-width: 1440px) {
+    .avatar,
+    .meta {
+      border-width: 6px;
+    }
+    .meta {
+      font-size: 2rem;
+      line-height: 40px;
     }
   }
 
@@ -41,6 +73,15 @@ export const StyledUser = styled.div`
       .meta {
         border: 2px solid ${theme.colors.text};
         border-right: none;
+
+        /* medium */
+        @media screen and (min-width: 768px) {
+          border-width: 4px;
+        }
+        /* large */
+        @media screen and (min-width: 1440px) {
+          border-width: 6px;
+        }
       }
     `};
 `;
