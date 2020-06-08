@@ -3,6 +3,8 @@ import parker from "./assets/parker.jpeg";
 import parr from "./assets/parr.jpeg";
 import taylor from "./assets/taylor.jpeg";
 import joel from "./assets/joel.jpeg";
+import ivan from "./assets/ivan.jpeg";
+import duc from "./assets/duc.jpeg";
 
 // Dan
 const danFulltext =
@@ -58,10 +60,10 @@ export const reviewTaylor = {
     "Nathan is dedicated, knowledgeable, and a pleasure to work with. His expertise in design systems, Sketch, and Abstract has helped me tremendously as a designer.",
 };
 
+// Joel
 const joelFulltext =
   "I have worked and collaborated with Nathan for a few years now and it has been a pure delight. \n There are so many ways that he has improved our teams' experience. His research in design systems and front end engineering systems help our team create maintainable, scalable, consistent, and highly performant libraries. His work connects design and engineering teams in a way that improves communications and consistency in user experience. Through this process, our developer experience was greatly improved as well. Nathan has been willing to learn and teach about the design system space at large, leading our team to better understand the \"why\" and \"how\" for our own system. He's also turned us on to industry podcasts, Gatsby, Styled Components, Styled System (and systems with similar specs/theories.) \n It's a huge asset to have someone like Nathan on your team who plays multiple roles in discussions and thinks objectively to help identify potential pitfalls and areas of improvement. \n I also appreciate the humor and playfulness he brings to situations that are ordinarily dull or tense; how he helps me (and others) meet and interact with others at networking events and conferences, and gives space for voices that aren't normally heard in conversations. \n Clearly, I highly recommend Nathan as he is one of the best coworkers I've ever had. I'm excited to see him continue to grow and look forward to learning more from him along the way.";
 
-// Joel
 export const reviewJoel = {
   name: "Joel Turner",
   title: "Product Engineer, Sprinklr",
@@ -71,6 +73,38 @@ export const reviewJoel = {
     "It's a huge asset to have someone like Nathan on your team who plays multiple roles in discussions and thinks objectively to help identify potential pitfalls and areas of improvement",
 };
 
-const reviews = [reviewDan, reviewParker, reviewParr, reviewTaylor, reviewJoel];
+const ducFulltext =
+  "You rarely come across standout talent and a person like Nathan. I had the pleasure of working with Nathan for one and a half years at Sprinklr. Nathan’s ability to juggle multiple roles was unlike any I’ve seen before. His leadership in the design system made a dramatic difference in communication between designers and engineers. We miss his tone and timbre voice. As a team member, Nathan earns my highest recommendation and hopefully, we will have an opportunity to work together again.";
+
+export const reviewDuc = {
+  name: "Duc Bao",
+  title: "Product Designer, Sprinklr",
+  avatar: duc,
+  fullText: ducFulltext,
+  reviewText:
+    "We miss his tone and timbre voice. As a team member, Nathan earns my highest recommendation and hopefully, we will have an opportunity to work together again",
+};
+
+const ivanFulltext =
+  "I had the opportunity to work with Nathan at Sprinklr, we were working in the same UX design group. Nathan was the Design Systems Engineer supporting designers, charging the lead on solidifying Sprinklr's design systems and developing high-quality websites. He is very skilled when it comes to development and UX design and knowledgeable when it comes to tools/technologies like Sketch, Abstract, Principle, Airtable, React, Gatsby, Node JS, GraphQL & API's. He's definitely one of those people that knows how to solve the most difficult questions and plays an important role to make our UX team work efficiently. I'm most impressed at how well versed he is when it comes to combining both UX design and development. I'm personally grateful to deep dive into design systems in general from Nathan.";
+
+export const reviewIvan = {
+  name: "Ivan Limongan",
+  title: "UX Designer, Sprinklr",
+  avatar: ivan,
+  fullText: ivanFulltext,
+  reviewText:
+    "He's knows how to solve the most difficult questions and plays an important role to make our UX team work efficiently.",
+};
+
+const reviews = [
+  reviewDan,
+  reviewParker,
+  reviewParr,
+  reviewTaylor,
+  reviewJoel,
+  reviewDuc,
+  reviewIvan,
+];
 
 export default reviews;
