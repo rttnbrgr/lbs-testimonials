@@ -7,6 +7,7 @@ import ivan from "./assets/ivan.jpeg";
 import duc from "./assets/duc.jpeg";
 import grace from "./assets/grace.jpeg";
 import david from "./assets/david.jpeg";
+import chastine from "./assets/chastine.jpeg";
 
 // Dan
 const danFulltext =
@@ -123,6 +124,18 @@ export const reviewGrace = {
     "Nathan is an exceptionally intelligent, well-qualified employee, but his personable, easygoing personality is what makes him so much fun to work with",
 };
 
+const chastineFulltext =
+  "I worked with Nathan for a little less than a year at Sprinklr—in the time we worked together I found him to be a very easy-going coworker, clear communicator, collaborative, logical, easy to work with, and all around friendly and welcoming face in the office. Really enjoyed working on shared initiatives with him, he often had unique and interesting perspectives to add to conversations and projects. Would definitely work with him again!";
+
+export const reviewChastine = {
+  name: "Chastine Hanthorn",
+  title: "UX Researcher, Sprinklr",
+  avatar: chastine,
+  fullText: chastineFulltext,
+  reviewText:
+    "I found him to be a very easy-going coworker, clear communicator, collaborative, logical, easy to work with, and all around friendly and welcoming face in the office. Really enjoyed working on shared initiatives with him.",
+};
+
 const reviews = [
   reviewDan,
   reviewParker,
@@ -133,6 +146,7 @@ const reviews = [
   reviewIvan,
   reviewDavid,
   reviewGrace,
+  reviewChastine,
 ];
 
 export default reviews;
