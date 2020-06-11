@@ -2,8 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 
-import { StyledHr } from "./misc";
-
 const StyledReviewGroup = styled.article`
   & + & {
     margin-top: 1.5rem;
