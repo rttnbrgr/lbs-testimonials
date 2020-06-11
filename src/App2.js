@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
-import { Global, css } from "@emotion/core";
+import { css } from "@emotion/core";
 import { themeDark, themeLight } from "./theme";
-import Review, { SampleReview } from "./components/Review";
+import Review from "./components/Review";
 import {
   StyledButton,
   StyledLinkButton,
@@ -11,10 +11,6 @@ import {
 } from "./components/Header";
 import reviews from "./data";
 import shuffle from "./utils";
-
-const getTypeStyle = (size) => {
-  css``;
-};
 
 const StyledAppHero = styled.main`
   background-color: ${({ theme }) => theme.colors.appBg};
@@ -48,8 +44,6 @@ function App() {
   };
 
   const getTheme = () => (currentTheme === "dark" ? themeDark : themeLight);
-
-  const { link, name, title, avatar } = SampleReview;
 
   // running on each render cycle
   // const shuffleReviews = shuffle(reviews);
