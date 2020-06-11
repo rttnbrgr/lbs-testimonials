@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
 import { Global, css } from "@emotion/core";
@@ -34,10 +33,6 @@ const StyledReviewColumn = styled.div`
   padding-bottom: 3em;
   /**debug */
   max-width: 500px;
-`;
-
-const StrokeButtonStyles = css`
-  background-color: blue;
 `;
 
 function App() {
