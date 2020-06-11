@@ -56,6 +56,10 @@ function App() {
 
   const { link, name, title, avatar } = SampleReview;
 
+  // running on each render cycle
+  // const shuffleReviews = shuffle(reviews);
+  const shuffleReviews = reviews;
+
   return (
     <ThemeProvider theme={currentTheme === "dark" ? themeDark : themeLight}>
       <div className={`App theme--${currentTheme}`}>
@@ -68,7 +72,7 @@ function App() {
         </StyledHeader>
         <StyledAppHero className="App-header">
           <StyledReviewColumn>
-            {shuffle(reviews).map((review, i) => {
+            {shuffleReviews.map((review, i) => {
               const { link, name, title, avatar, reviewText } = review;
               return (
                 <Review
