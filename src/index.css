@@ -13,3 +13,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+  /* naive reset */
+  margin: 0;
+  padding: 0;
+  /* all font */
+  font-family: sans-serif;
+  line-height: 1;
+}
