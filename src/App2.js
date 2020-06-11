@@ -9,6 +9,7 @@ import { themeDark, themeLight } from "./theme";
 import Review, { SampleReview } from "./components/Review";
 import dan from "./assets/dan.jpeg";
 import reviews, { reviewDan } from "./data";
+import shuffle from "./utils";
 
 const getTypeStyle = (size) => {
   css``;
@@ -126,7 +127,7 @@ function App() {
         </StyledHeader>
         <StyledAppHero className="App-header">
           <StyledReviewColumn>
-            {reviews.map((review, i) => {
+            {shuffle(reviews).map((review, i) => {
               const { link, name, title, avatar, reviewText } = review;
               return (
                 <Review
