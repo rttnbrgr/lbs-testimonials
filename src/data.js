@@ -5,6 +5,8 @@ import taylor from "./assets/taylor.jpeg";
 import joel from "./assets/joel.jpeg";
 import ivan from "./assets/ivan.jpeg";
 import duc from "./assets/duc.jpeg";
+import grace from "./assets/grace.jpeg";
+import david from "./assets/david.jpeg";
 
 // Dan
 const danFulltext =
@@ -97,6 +99,30 @@ export const reviewIvan = {
     "He's knows how to solve the most difficult questions and plays an important role to make our UX team work efficiently.",
 };
 
+const davidFulltext =
+  "I worked with Nathan for close to 4 years at Sprinklr. I watched him progress from an in-the-trenches front-end developer/designer to a champion of best practices and leader in trying to unify and modernize UX engineering company-wide. He grasps the key aspects of the human parts of engineering challenges - which of course are frequently the hardest parts. He's an excellent communicator, always enthusiastic about working through challenging technical issues with teammates. I loved the energy he brought to our team and I hope to work with him again some day.";
+
+export const reviewDavid = {
+  name: "David Stelter",
+  title: "Team Lead, Product Engineering, Sprinklr",
+  avatar: david,
+  fullText: davidFulltext,
+  reviewText:
+    "He's an excellent communicator, always enthusiastic about working through challenging technical issues with teammates. I loved the energy he brought to our team and I hope to work with him again some day.",
+};
+
+const graceFulltext =
+  "I am proud to have worked with Nathan for the past year, specifically on streamlining UI inconsistencies across a massive, silo-ed software system. Nathan is an exceptionally intelligent, well-qualified employee, but his personable, easygoing personality is what makes him so much fun to work with. Nathan is always willing to have an insightful conversation and led many entertaining discussions at our weekly office lunch. He will be extremely missed at Sprinklr, not only for his expertise but, more importantly, for the joy he brought his coworkers as a colleague and friend. Nathan will be a tremendous asset to whichever lucky company scoops him up.";
+
+export const reviewGrace = {
+  name: "Grace Brinkley",
+  title: "UX Researcher, Sprinklr",
+  avatar: grace,
+  fullText: graceFulltext,
+  reviewText:
+    "Nathan is an exceptionally intelligent, well-qualified employee, but his personable, easygoing personality is what makes him so much fun to work with",
+};
+
 const reviews = [
   reviewDan,
   reviewParker,
@@ -105,6 +131,8 @@ const reviews = [
   reviewJoel,
   reviewDuc,
   reviewIvan,
+  reviewDavid,
+  reviewGrace,
 ];
 
 export default reviews;
